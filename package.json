@@ -1,6 +1,6 @@
 {
     "name": "vue-dag-next",
-    "version": "0.1.1",
+    "version": "0.1.2",
     "private": false,
     "main": "dist/vue-dag-next.umd.js",
     "module": "dist/vue-dag-next.common.js",
