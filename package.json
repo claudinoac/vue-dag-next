@@ -1,60 +1,54 @@
 {
-  "name": "vue-dag",
-  "version": "0.1.8",
-  "description": "Directed acyclic graph (DAG) builder for Vue.js",
-  "main": "dist/vue-dag.umd.js",
-  "module": "dist/vue-dag.esm.js",
-  "unpkg": "dist/vue-dag.min.js",
-  "typings": "types/index.d.ts",
-  "scripts": {
-    "serve": "vue-cli-service serve",
-    "build": "vue-cli-service build --dest demo",
-    "build:library": "vue-cli-service build --target lib --name vue-dag ./src/index.ts",
-    "lint": "vue-cli-service lint",
-    "test:unit": "vue-cli-service test:unit",
-    "docs:dev": "vuepress dev docs",
-    "docs:build": "vuepress build docs"
-  },
-  "repository": {
-    "type": "git",
-    "url": "git+https://github.com/AlexImb/vue-dag.git"
-  },
-  "keywords": [
-    "vue",
-    "dag",
-    "builder"
-  ],
-  "author": "Alex Imbrea <aleximbrea@gmail.com>",
-  "bugs": {
-    "url": "https://github.com/AlexImb/vue-dag/issues"
-  },
-  "homepage": "https://github.com/AlexImb/vue-dag",
-  "license": "MIT",
-  "devDependencies": {
-    "@types/jest": "^26.0.10",
-    "@vue/cli-plugin-babel": "^4.5.12",
-    "@vue/cli-plugin-eslint": "^4.3.1",
-    "@vue/cli-plugin-typescript": "^4.4.1",
-    "@vue/cli-plugin-unit-jest": "^4.5.4",
-    "@vue/cli-service": "^4.5.6",
-    "@vue/eslint-config-prettier": "^6.0.0",
-    "@vue/eslint-config-typescript": "^4.0.0",
-    "@vue/test-utils": "1.1.4",
-    "babel-core": "7.0.0-bridge.0",
-    "babel-eslint": "^10.0.1",
-    "core-js": "^3.8.3",
-    "eslint": "^6.8.0",
-    "eslint-plugin-prettier": "^3.1.0",
-    "eslint-plugin-vue": "^7.8.0",
-    "node-sass": "^5.0.0",
-    "prettier": "^2.1.1",
-    "sass-loader": "^11.0.1",
-    "ts-jest": "^26.3.0",
-    "typescript": "<4.3.0",
-    "vue": "^2.6.10",
-    "vue-class-component": "^7.0.2",
-    "vue-property-decorator": "^9.0.0",
-    "vue-template-compiler": "^2.6.10",
-    "vuepress": "^1.1.0"
-  }
+    "name": "vue-dag-next",
+    "version": "0.1.1",
+    "private": false,
+    "main": "dist/vue-dag-next.umd.js",
+    "module": "dist/vue-dag-next.common.js",
+    "unpkg": "dist/vue-dag-next.min.js",
+    "typings": "types/index.d.ts",
+    "scripts": {
+        "serve": "vue-cli-service serve",
+        "build": "vue-cli-service build",
+        "test:unit": "vue-cli-service test:unit",
+        "lint": "vue-cli-service lint",
+        "build:library": "vue-cli-service build --target lib --name vue-dag-next ./src/index.ts",
+        "docs:dev": "vuepress dev docs",
+        "docs:build": "vuepress build docs"
+    },
+    "dependencies": {
+        "core-js": "^3.6.5",
+        "vue": "^3.0.0"
+    },
+    "devDependencies": {
+        "@types/jest": "^24.0.19",
+        "@typescript-eslint/eslint-plugin": "^4.18.0",
+        "@typescript-eslint/parser": "^4.18.0",
+        "@vue/cli-plugin-babel": "~4.5.0",
+        "@vue/cli-plugin-eslint": "~4.5.0",
+        "@vue/cli-plugin-typescript": "~4.5.0",
+        "@vue/cli-plugin-unit-jest": "~4.5.0",
+        "@vue/cli-service": "~4.5.0",
+        "@vue/compiler-sfc": "^3.0.0",
+        "@vue/eslint-config-airbnb": "^5.0.2",
+        "@vue/eslint-config-typescript": "^7.0.0",
+        "@vue/test-utils": "^2.0.0-0",
+        "eslint": "^6.7.2",
+        "eslint-plugin-import": "^2.20.2",
+        "eslint-plugin-vue": "^7.0.0",
+        "lint-staged": "^9.5.0",
+        "sass": "^1.26.5",
+        "sass-loader": "^8.0.2",
+        "typescript": "~4.1.5",
+        "vue-jest": "^5.0.0-0",
+        "vuepress": "^2.0.0-beta.35"
+    },
+    "gitHooks": {
+        "pre-commit": "lint-staged"
+    },
+    "lint-staged": {
+        "*.{js,jsx,vue,ts,tsx}": [
+            "vue-cli-service lint",
+            "git add"
+        ]
+    }
 }

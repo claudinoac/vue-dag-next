@@ -22,3 +22,5 @@ yarn-error.log*
 
 # Docs build
 docs/.vuepress/dist
+docs/.vuepress/.cache
+docs/.vuepress/.temp

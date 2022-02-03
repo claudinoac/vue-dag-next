@@ -14,13 +14,21 @@
 .pull-right {
   float: right;
 }
+
+h1 {
+    font-size: 12px;
+}
 </style>
 
 <script lang="ts">
-import { Component, Vue, Prop } from 'vue-property-decorator';
+import { defineComponent } from 'vue';
 
-@Component
-export default class ExampleNode extends Vue {
-  @Prop() readonly exampleProp!: Object;
-}
+export default defineComponent({
+    props: {
+        exampleProp: {
+            type: String,
+            required: true,
+        },
+    },
+});
 </script>
