@@ -139,7 +139,7 @@ export default defineComponent({
             case 'right':
                 return [x + 240, y + 40];
             case 'bottom':
-                return [x + 120, y + 40];
+                return [x + 120, y + 80];
             case 'left':
                 return [x, y + 40];
             default:
