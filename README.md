@@ -1,4 +1,4 @@
-# 🏗Vue DAG Builde (VueJS 3+)
+# 🏗Vue DAG Buildr (VueJS 3+)
 
 > Data-driven directed acyclic graph (DAG) visual builder for Vue.js
 
@@ -21,16 +21,16 @@
 ## Installation
 
 ```bash
-npm install --save vue-dag
+npm install --save vue-dag-next
 ```
 or 
 ```bash
-yarn add vue-dag
+yarn add vue-dag-next
 ```
 
 Import and register the component
 ```js
-import VueDag from 'vue-dag';
+import VueDag from 'vue-dag-next';
 ```
 
 ```js
@@ -83,12 +83,12 @@ Use it in templates
 
 The component does not include any CSS. You'll need to import it separately:
 ```js
-import 'vue-dag/dist/vue-dag.css';
+import 'vue-dag-next/dist/vue-dag-next.css';
 ```
 
 Alternatively, you can import the SCSS version and overrite variables and styles
  ```scss
-@import 'vue-dag/src/scss/vue-dag.scss';
+@import 'vue-dag-next/src/scss/vue-dag.scss';
 ```
 
 Full documentation: [https://vue-dag-next.netlify.com/](https://vue-dag-next.netlify.com/)
