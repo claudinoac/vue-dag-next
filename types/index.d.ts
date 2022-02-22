@@ -2,6 +2,7 @@ declare interface GraphConfig {
   scale?: number;
   height?: string;
   width?: string;
+  readonly: boolean;
 }
 
 declare interface GraphNode {

@@ -15,10 +15,11 @@
         :end="edge.end"
         :edge-color="edge.edgeColor"
         :arrow-color="edge.arrowColor"
+        :readonly="modelValue.config.readonly"
         @deleteEdge="deleteEdge"
       />
       <DAGEdge
-        v-if="draftEdge"
+        v-if="draftEdge && !modelValue.config.readonly"
         :id="draftEdge.id"
         :start="draftEdge.start"
         :end="draftEdge.end"
@@ -76,6 +77,7 @@ export default defineComponent({
                     scale: 1,
                     height: '100%',
                     width: '100%',
+                    readonly: false,
                 },
                 nodes: [],
                 edges: [],
@@ -147,13 +149,17 @@ export default defineComponent({
             }
         },
         deleteEdge(id: number): void {
-            this.modelValue.edges = this.modelValue.edges.filter((e) => e.id !== id);
+            if (!this.modelValue.config.readonly) {
+                this.modelValue.edges = this.modelValue.edges.filter((e) => e.id !== id);
+            }
         },
         linkClick(linkPosition: GraphLinkPosition, id: number): void {
-            if (this.newEdge) {
-                this.stopLinking(linkPosition, id);
-            } else {
-                this.startLinking(linkPosition, id);
+            if (!this.modelValue.config.readonly) {
+                if (this.newEdge) {
+                    this.stopLinking(linkPosition, id);
+                } else {
+                    this.startLinking(linkPosition, id);
+                }
             }
         },
         startLinking(linkPosition: GraphLinkPosition, id: number): void {

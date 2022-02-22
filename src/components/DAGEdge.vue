@@ -34,6 +34,10 @@ export default defineComponent({
             type: Number,
             required: true,
         },
+        readonly: {
+            type: Boolean,
+            default: false,
+        },
     },
     data() {
         return {
@@ -75,7 +79,9 @@ export default defineComponent({
     },
     methods: {
         handleMouseOver(): void {
-            this.showDelete = true;
+            if (!this.readonly) {
+                this.showDelete = true;
+            }
         },
         handleMouseLeave(): void {
             this.showDelete = false;
