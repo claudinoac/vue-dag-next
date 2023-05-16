@@ -5,6 +5,7 @@
     @mousemove="handleMouseMove"
     @mouseup="handleMouseUp"
     @mousedown="handleMouseDown"
+    @click="deSelectNode"
   >
     <template v-if="edges" #edges>
       <DAGEdge
@@ -199,6 +200,9 @@ export default defineComponent({
             this.mouse.lastX = e.pageX || e.clientX + document.documentElement.scrollLeft;
             this.mouse.lastY = e.pageY || e.clientY + document.documentElement.scrollTop;
         },
+        deSelectNode(e: MouseEvent, node: null) {
+            this.selected = null;
+        },
         handleMouseMove(e: MouseEvent): void {
             if (this.dragging) {
                 this.mouse.x = e.pageX || e.clientX + document.documentElement.scrollLeft;
@@ -222,7 +226,9 @@ export default defineComponent({
         },
         handleMouseDown(e: MouseEvent): void {
             const { target } = e;
-            this.dragging = true;
+            if (this.selected) {
+                this.dragging = true;
+            }
         },
         moveSelectedNode(dx: number, dy: number): void {
             if (!this.selected || !this.selected.x || !this.selected.y) return;

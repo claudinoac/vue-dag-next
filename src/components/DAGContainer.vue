@@ -1,6 +1,6 @@
 <template>
   <div class="vd__container">
-    <svg :width="width" :height="height">
+    <svg :width="width" :height="height" style="overflow: visible">
       <slot name="edges" />
     </svg>
 
